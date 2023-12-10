@@ -1,36 +1,16 @@
-import React from 'react';
-import { useQuery } from 'react-query';
-import axios from 'axios';
+//create app component and import Planets component and render it
 
-const fetchPlanets = async () => {
-  const res = await axios.get('http://swapi.dev/api/planets/');
-  return res.data;
-}
+import React from 'react';
+import Planets from './useQuery/Planets';
+import Books from './useQuery/Books';
 
 const App = () => {
-  const { data, status } = useQuery('planets', fetchPlanets);
-  console.log(data);
-
   return (
     <div>
-      <h2>Planets</h2>
-
-      {/* <p>{ status }</p> */}
-      { status === 'loading' && (
-        <div>Loading data...</div>
-      )}
-      { status === 'error' && (
-        <div>Error fetching data</div>
-      )}
-      { status === 'success' && (
-        <div>
-          { data.results.map(planet => (
-            <div key={planet.name}>{ planet.name }</div>
-          )) }
-        </div>
-      )}
+      <Planets />
+      <Books/>
     </div>
   );
-}
+};
 
-export default App;
+export default App; 
