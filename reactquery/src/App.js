@@ -1,9 +1,10 @@
 //create app component and import Planets component and render it
 
 import React from 'react';
-import Planets from './useQuery/Planets';
-import Books from './useQuery/Books';
-import BooksRest from './useQuery/BooksRest';
+import Planets from './useQuery/1-Planets';
+import Books from './useQuery/2-Books';
+import BooksRest from './useQuery/3-BooksRest';
+import GetBooks from './useQuery/5_getBook';
 
 
 const App = () => {
@@ -11,7 +12,8 @@ const App = () => {
     <div>
       {/* <Planets />
       <Books/> */}
-      <BooksRest/>
+      {/* <BooksRest/> */}
+      <GetBooks/>
 
     </div>
   );
