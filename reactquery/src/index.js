@@ -7,11 +7,11 @@ import App from './App';
 import { ReactQueryDevtools } from 'react-query/devtools'
 
 const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnMount: false, // Or 'always', or true
-    },
-  },
+  // defaultOptions: {
+  //   queries: {
+  //     refetchOnMount: false, // Or 'always', or true
+  //   },
+  // },
 });
 
 const root = document.getElementById('root');

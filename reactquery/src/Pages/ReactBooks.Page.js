@@ -6,10 +6,14 @@ const fetchBooks = async () => {
     return response.json();
 };
 const BooksRest = () => {
-    const { data, isLoading, error } = useQuery('books', fetchBooks );
+    const { data, isLoading, error,isFetching } = useQuery('books', fetchBooks );
     if (isLoading) {
         return <div>Loading...</div>;
     }
+    if (isFetching) {
+        return <div>Fetching...</div>;
+    }
+
     if (error) {
         return <div>Error: {error.message}</div>;
     }
