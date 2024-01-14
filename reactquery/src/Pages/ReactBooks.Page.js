@@ -6,7 +6,11 @@ const fetchBooks = async () => {
     return response.json();
 };
 const BooksRest = () => {
-    const { data, isLoading, error,isFetching } = useQuery('books', fetchBooks );
+    const { data, isLoading, error,isFetching } = useQuery('books', fetchBooks,{
+        refetchOnWindowFocus: false,
+        refetchInterval:10000,
+    }
+    );
     if (isLoading) {
         return <div>Loading...</div>;
     }
