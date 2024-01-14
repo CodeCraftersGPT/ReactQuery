@@ -1,16 +1,25 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import App from './App';
 
-const queryClient = new QueryClient();
+import { ReactQueryDevtools } from 'react-query/devtools'
 
-ReactDOM.render(
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnMount: false, // Or 'always', or true
+    },
+  },
+});
+
+const root = document.getElementById('root');
+
+ReactDOM.createRoot(root).render(
   <QueryClientProvider client={queryClient}>
-    <React.StrictMode>
+   
       <App />
-    </React.StrictMode>
-  </QueryClientProvider>,
-  document.getElementById('root')
+      <ReactQueryDevtools initialIsOpen={false} />
+  </QueryClientProvider>
 );
