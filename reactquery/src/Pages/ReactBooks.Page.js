@@ -6,11 +6,10 @@ const fetchBooks = async () => {
     return response.json();
 };
 const BooksRest = () => {
-    const { data, isLoading, error,isFetching } = useQuery('books', fetchBooks,{
-        refetchOnWindowFocus: false,
-        refetchIntervalInBackground: true,
-    }
-    );
+    const { data, isLoading, error,refetch,isFetching  } = useQuery('books', fetchBooks, { 
+        refetchOnWindowFocus: false ,
+        
+    });
     if (isLoading) {
         return <div>Loading...</div>;
     }
@@ -29,6 +28,8 @@ const BooksRest = () => {
                     <li key={book.id}>{book.title}</li>
                 ))}
             </ul>
+            {/* add button to refetch the content using the refetch */}
+            <button onClick={()=>refetch()}>Refetch</button>
         </div>
     );
 };
