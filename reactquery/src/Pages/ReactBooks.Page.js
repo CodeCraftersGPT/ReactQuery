@@ -8,6 +8,7 @@ const fetchBooks = async () => {
 const BooksRest = () => {
     const { data, isLoading, error,isFetching } = useQuery('books', fetchBooks,{
         refetchOnWindowFocus: false,
+        refetchIntervalInBackground: true,
     }
     );
     if (isLoading) {
