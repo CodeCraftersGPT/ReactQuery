@@ -7,7 +7,7 @@ const fetchBooks = async () => {
 };
 const BooksRest = () => {
     const { data, isLoading, error,isFetching } = useQuery('books', fetchBooks,{
-        staleTime: 120000,
+        refetchOnWindowFocus: false,
     }
     );
     if (isLoading) {
