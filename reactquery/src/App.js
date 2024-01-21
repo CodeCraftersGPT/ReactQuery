@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Switch, Route, Link,Routes } from 'react-route
 import Home from './Pages/Home.Page';
 import ReactBooks from './Pages/ReactBooks.Page';
 import Books from './Pages/Books.Page';
+import OrderCart from './Pages/OrderCart.Page';
+
 
 
 
@@ -29,6 +31,10 @@ const App = () => {
         <li className="nav-item">
           <Link className="nav-link" to="/react-books">React Books</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/order-cart">Order Cart</Link>
+        </li>
+        
       </ul>
     </div>
   </div>
@@ -38,6 +44,8 @@ const App = () => {
             <Route path="/traditional-books" element={<Books/>} />
        
             <Route path="/react-books" element={<ReactBooks/>} />
+
+            <Route path="/order-cart" element={<OrderCart/>} />
            
             <Route path="/" element={<Home/>} />
           </Routes>
