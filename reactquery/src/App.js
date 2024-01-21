@@ -7,6 +7,7 @@ import Home from './Pages/Home.Page';
 import ReactBooks from './Pages/ReactBooks.Page';
 import Books from './Pages/Books.Page';
 import OrderCart from './Pages/OrderCart.Page';
+import AddBook from './Pages/RQAddBook.Page';
 
 
 
@@ -34,6 +35,9 @@ const App = () => {
         <li className="nav-item">
           <Link className="nav-link" to="/order-cart">Order Cart</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/add-book">Add Book</Link>
+        </li>
         
       </ul>
     </div>
@@ -46,6 +50,8 @@ const App = () => {
             <Route path="/react-books" element={<ReactBooks/>} />
 
             <Route path="/order-cart" element={<OrderCart/>} />
+
+            <Route path="/add-book" element={<AddBook/>} />
            
             <Route path="/" element={<Home/>} />
           </Routes>
