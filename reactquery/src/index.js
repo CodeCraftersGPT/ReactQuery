@@ -6,13 +6,7 @@ import App from './App';
 
 import { ReactQueryDevtools } from 'react-query/devtools'
 
-const queryClient = new QueryClient({
-  // defaultOptions: {
-  //   queries: {
-  //     refetchOnMount: false, // Or 'always', or true
-  //   },
-  // },
-});
+const queryClient = new QueryClient();
 
 const root = document.getElementById('root');
 
