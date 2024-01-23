@@ -9,6 +9,8 @@ import Books from './Pages/Books.Page';
 import OrderCart from './Pages/OrderCart.Page';
 import AddBook from './Pages/RQAddBook.Page';
 import GraphQLBooks from './Pages/RQGraphQLBook';
+import GraphQLAddBook from './Pages/RQGraphQLAddBook';
+
 
 
 const App = () => {
@@ -39,6 +41,10 @@ const App = () => {
         <li className="nav-item">
           <Link className="nav-link" to="/add-book">Add Book</Link>
         </li>
+
+        <li className="nav-item">
+          <Link className="nav-link" to="/add-graphql-book">Add GraphQL Book</Link>
+        </li>
         
       </ul>
     </div>
@@ -56,6 +62,8 @@ const App = () => {
 
             <Route path="/add-book" element={<AddBook/>} />
            
+            <Route path="/add-graphql-book" element={<GraphQLAddBook/>} />
+
             <Route path="/" element={<Home/>} />
           </Routes>
         </div>
