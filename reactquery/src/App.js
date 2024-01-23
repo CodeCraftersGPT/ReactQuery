@@ -8,9 +8,7 @@ import ReactBooks from './Pages/ReactBooks.Page';
 import Books from './Pages/Books.Page';
 import OrderCart from './Pages/OrderCart.Page';
 import AddBook from './Pages/RQAddBook.Page';
-
-
-
+import GraphQLBooks from './Pages/RQGraphQLBook';
 
 
 const App = () => {
@@ -33,6 +31,9 @@ const App = () => {
           <Link className="nav-link" to="/react-books">React Books</Link>
         </li>
         <li className="nav-item">
+          <Link className="nav-link" to="/react-graphql-books">GraphQL Books</Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link" to="/order-cart">Order Cart</Link>
         </li>
         <li className="nav-item">
@@ -48,6 +49,8 @@ const App = () => {
             <Route path="/traditional-books" element={<Books/>} />
        
             <Route path="/react-books" element={<ReactBooks/>} />
+
+            <Route path="/react-graphql-books" element={<GraphQLBooks/>} />
 
             <Route path="/order-cart" element={<OrderCart/>} />
 
